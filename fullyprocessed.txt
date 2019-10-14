@@ -1,0 +1,6 @@
+d1 	 first five document
+d2 	 each document will singl line document titl separat tab charact
+d3 	 why well just space confus rest whitespac document tab easier
+d4 	 you need look carriag return though languag allow line entiti
+d5 	 other languag will insist block text delineat carriag return statement
+

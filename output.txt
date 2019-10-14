@@ -1,0 +1,5 @@
+D1 	 first five documents
+D2 	 Each documents will single line document title separated TAB character
+D3 	 Why well just space confusing rest whitespace documents Tabs easier
+D4 	 You need look carriage returns though languages allow line entity
+D5 	 Other languages will insist block text delineated carriage return statements

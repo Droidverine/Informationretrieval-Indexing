@@ -11,13 +11,15 @@ class Preprocess
 {
 
 	public static void main(String[] args) throws Exception {
-		//String sentence=" What is the capital of Cyprus ?";
+		//GETTING LIST OF STOPWORDS FROM STOPWORDS.TXT FILE ";
 		String[] stopwords=getstopwords("Stopwords.txt");
+    //CALLING METHOD TO REMOVE STOPWORDS
 		removeStopwords();
 		 
 }
 public static void Stemmingmethod()throws Exception
 {
+      //STEMMING CAN BE PERFORMED ONLY BY ANALYZING CHARACTER BY CHARACTER.
    char[] w = new char[501];
       Stemmer s = new Stemmer();
       String prcessedtxt="";
@@ -42,16 +44,12 @@ public static void Stemmingmethod()throws Exception
                     ch = in.read();
                     if (!Character.isLetter((char) ch))
                     {
-                       /* to test add(char ch) */
-                      // for (int c = 0; c < j; c++) s.add(w[c]);
-
-                       /* or, to test add(char[] w, int j) */
+                      
                         s.add(w, j); 
 
                        s.stem();
                        {  
 
-                          /* and now, to test toString() : */
                           u = s.toString();
                           finalsen.add(u);
                           /* to test getResultBuffer(), getResultLength() : */
@@ -126,7 +124,7 @@ public static void removeStopwords() throws Exception
       String line="";
       String prcessedtxt="";
       Scanner scanner = new Scanner(new File("Sentence.txt"));
-            Scanner newscanner = new Scanner(new File("Sentence.txt"));
+       Scanner newscanner = new Scanner(new File("Sentence.txt"));
 
       BufferedWriter writer = new BufferedWriter(new FileWriter("stopwordsremoved.txt"));
        FileInputStream fstream = new FileInputStream("Sentence.txt");
@@ -141,9 +139,7 @@ public static void removeStopwords() throws Exception
       br.mark(3);
             
 
-              //  numberOfMovies++;
          HashMap<String, String> capitalCities = new HashMap<String, String>();
-        // newscanner.skip("(?:.*\\r?\\n|\\r){2}");
       
 
     while (scanner.hasNextLine()) {
@@ -170,7 +166,7 @@ public static void removeStopwords() throws Exception
       prcessedtxt=prcessedtxt+" "+ word;
     }
     writer.write(title+prcessedtxt+"\n"); 
-    System.out.print(wordList.toString());
+  //  System.out.print(wordList.toString());
     prcessedtxt="";
     wordList.clear();
 

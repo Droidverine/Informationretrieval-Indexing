@@ -1,0 +1,9 @@
+		D1	D2	D3	D4	D5	D6 
+breakthrough	1	0	1	0	1	1
+material	1	1	1	0	0	0 
+research	1	2	1	1	1	1 
+new	0	1	2	1	0	0 
+student	0	1	0	1	0	0 
+approach	0	0	1	0	0	0 
+challenge	0	0	0	1	0	1 
+barrier	0	0	0	0	1	0	

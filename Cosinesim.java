@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import java.lang.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.math.BigDecimal;
+
 
 
 class Cosinesim{
@@ -24,10 +26,12 @@ class Cosinesim{
        Double dotpro=0.00;
        Double sqrtpro;
        Double tempbuff=0.00;
+       Double dotprobuff=0.00;
+       Double dotprobuff1=0.00;
               Double tempbuff1=0.00;
 
-       DecimalFormat df = new DecimalFormat("#.#########");
-        df.setRoundingMode(RoundingMode.CEILING);
+       DecimalFormat df = new DecimalFormat("#.##");
+       // df.setRoundingMode(RoundingMode.CEILING);
 
               Scanner myObj = new Scanner(System.in);  
 
@@ -67,11 +71,13 @@ class Cosinesim{
           wordList.removeAll(Arrays.asList(null,""));
 
          
-          	          dotpro=dotpro+Double.parseDouble(wordList.get(index1))*Double.parseDouble(wordList.get(index2));
+          	          dotprobuff=dotprobuff+Double.parseDouble(wordList.get(index1));
+                      dotprobuff1=dotprobuff1+Double.parseDouble(wordList.get(index2));
 
-                      tempbuff=tempbuff+Double.parseDouble(wordList.get(index1));
-                      tempbuff1=tempbuff1+Double.parseDouble(wordList.get(index2));
+                      tempbuff=tempbuff+Math.pow(Double.parseDouble(wordList.get(index1)), 2);
+                      tempbuff1=tempbuff1+Math.pow(Double.parseDouble(wordList.get(index2)),2);
 
+                  // System.out.println(" "+wordList.toString()+""); 
 
           wordList.clear();
 
@@ -79,8 +85,16 @@ class Cosinesim{
 
 
 
-}               
-                   System.out.println(" "+dotpro/Math.sqrt(tempbuff1* tempbuff)+""); 
+}
+
+                    dotprobuff=round((dotprobuff),2);
+                    dotprobuff1=round((dotprobuff1),2);
+                                      System.out.println(" "+(Math.sqrt(tempbuff1)+Math.sqrt(tempbuff))+""); 
+
+               //    System.out.println(" "+(dotprobuff*dotprobuff1)+""); 
+
+                 //  System.out.println(" "+round(Math.sqrt(tempbuff),2)+""); 
+                   //System.out.println(" "+round(Math.sqrt(tempbuff1),1)+""); 
 
 
 
@@ -109,7 +123,7 @@ public static ArrayList<Integer> countnumberofdocs(String file1, String file2)th
           			// indexList.remove(0);
           			indexList.removeAll(Collections.singleton(null));
           			indexList.removeAll(Arrays.asList(null,""));
-         			//System.out.print(" "+indexList.indexOf(file1)+" "+ indexList.indexOf(file2)); 
+         //		System.out.print(" "+indexList.indexOf(file1)+" "+ indexList.indexOf(file2)); 
 
          			indexnumber.add(indexList.indexOf(file1));
          			indexnumber.add(indexList.indexOf(file2));
@@ -126,5 +140,11 @@ public static ArrayList<Integer> countnumberofdocs(String file1, String file2)th
 
 }
 
+public static double round(double value, int places) {
+    if (places < 0) throw new IllegalArgumentException();
 
+    BigDecimal bd = BigDecimal.valueOf(value);
+    bd = bd.setScale(places, RoundingMode.HALF_UP);
+    return bd.doubleValue();
+}
 }

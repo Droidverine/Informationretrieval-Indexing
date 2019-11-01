@@ -1,5 +1,5 @@
-D1 	 first five documents
-D2 	 Each documents will single line document title separated TAB character
-D3 	 Why well just space confusing rest whitespace documents Tabs easier
-D4 	 You need look carriage returns though languages allow line entity
-D5 	 Other languages will insist block text delineated carriage return statements
+Doc1 	 first five documents
+Doc2 	 Each documents will single line document title separated TAB character
+Doc3 	 Why well just space confusing rest whitespace documents Tabs easier
+Doc4 	 You need look carriage returns though languages allow line entity
+Doc5 	 Other languages will insist block text delineated carriage return statements
